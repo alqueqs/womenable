@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<main class="content">
+    <section class="notes">
+        <div class="container">
+            <form action="#" class="notes__form" method="POST">
+                <textarea name="note" id="note" class="notes__textarea" placeholder="Текст"></textarea>
+                <button class="notes__send">Опубликовать</button>
+            </form>
+            <h1 class="notes__title">Посты</h1>
+            <ul class="notes__list">
+                {% for i in data %}
+                    {% if data %}
+                        {% if i.user_id == user.id %}
+                            <li>
+                                <div class="notes__name">{{ user.first_name }}</div>
+                                <pre>{{ i.data }}</pre>
+                                <button class="notes__delete" onclick="deleteNote({{ i.id }})">Удалить</button>
+                            </li>
+                        {% else %}
+                            <li>
+                                <div class="notes__name">
+                                    {% for user in users %}
+                                    {% if user.id == i.user_id %}
+                                    {{ user.first_name }}
+                                    {% endif %}
+                                    {% endfor %}
+                                </div>
+                                <pre>{{ i.data }}</pre> 
+                            </li>
+                        {% endif %}
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </div>
+    </section>
+</main>
+{% endblock %}

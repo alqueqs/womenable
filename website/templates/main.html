@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}Main{% endblock %}
+
+{% block content %}
+<main class="content content_iphone">
+    <section class="main-block">
+        <div class="container">
+            <div class="main-block__row">
+                <div class="main-block__column main-block__column_white">
+                    <div class="main-block__logo">
+                        <img src="../static/img/logo.svg" alt="logo">
+                    </div>
+                </div>
+                <div class="main-block__column">
+                    <div class="main-block__label">Вход Wonder Women</div>
+                    <a href="/login" class="main-block__btn">Войти</a>
+                    <a href="/sign-up" class="main-block__btn main-block__btn_brown">Зарегистрироваться</a>
+                    <div class="main-block__text">Регистрация доступна только для лиц женского пола.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+{% endblock %}

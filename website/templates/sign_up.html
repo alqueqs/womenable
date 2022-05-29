@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block title %}Регистрация{% endblock %}
+
+{% block content %}
+<main class="content content_sign-up">
+    <section class="sign-up">
+        <div class="container">
+            <form action="" method="POST" class="sign-up__form form form_wide" id="form">
+                <div class="sign-up_head">
+                    <h3 class="sign-up__title">Регистрация</h3>
+                    <div class="form__item">
+                        <label for="email" class="form__label">Email</label>
+                        <input type="email" class="form__input _email _req" id="email" name="email" placeholder="Example@domain.com">
+                    </div>
+                    <div class="form__item">
+                        <label for="firstName" class="form__label">Имя пользователя</label>
+                        <input type="text" class="form__input _req" id="firstName" name="firstName" placeholder="Имя пользователя">
+                    </div>
+                    <div class="form__item">
+                        <label for="password" class="form__label">Пароль</label>
+                        <input type="password" class="form__input _req _password" id="password" name="password" placeholder="Пароль не меньше 7 символов">
+                    </div>
+                    <div class="form__item">
+                        <label for="confirm" class="form__label">Подтверждение пароля</label>
+                        <input type="password" class="form__input _req _confirm" id="confirm" name="confirm" placeholder="Подтверждение пароля">
+                    </div>
+                    <div class="form__button">Продолжить</div>
+                </div>
+                <div class="sign-up__body">
+                    <video id="webcam" autoplay playsinline></video>
+                    <div class="buttons">
+                        <div id="webcam-start">Start Camera</div>
+                        <div id="webcam-btn">Click Photo</div>
+                        <div id="webcam-btn_b" onclick="uploadImage()">Загрузить</div>
+                    </div>
+                    <canvas id="canvas"></canvas>
+                    <textarea id="url" name="url"></textarea>
+                    <button class="form__button form__button_b" type="submit">Отправить</button>
+                </div>
+            </form>
+        </div>
+    </section>
+</main>
+{% endblock %}

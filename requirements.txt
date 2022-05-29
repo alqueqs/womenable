@@ -1,0 +1,2 @@
+flask==2.1.2
+deepface==0.0.75
